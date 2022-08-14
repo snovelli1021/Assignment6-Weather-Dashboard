@@ -6,8 +6,6 @@
 }
 body{
     display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 2%;
     background: #055188;
 }
@@ -49,7 +47,14 @@ body{
     padding: 0 15px;
     border: 1px solid #ccc;
 }
-
+ul {
+    margin-top: 15%;
+}
+li {
+   list-style: none;
+    font-size: 20px;
+    margin-top: 2%;
+}
 
 
 
