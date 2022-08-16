@@ -13,13 +13,11 @@
         <header>Weather App</header>
         <section class="searchBar">
           <div class="content">
-            <input type="text" name=inputCity id="city" placeholder="Enter city name" required>
-            <button class="searchBtn">Search</button>
+            <input type="text" name="inputCity" id="inputCity" placeholder="Enter city name" required/>
+            <button id="searchBtn">Search</button>
             <div>
 <!--Adding static list to visualize local storage results being appended as <li>'s'-->                
-                <ul>
-                    <li></li>
-                </ul>
+                <ul id="cityList"></ul>
               </div> 
           </div>
         </div>      
@@ -50,6 +48,6 @@
     </div>
                 
 
-    <link rel="JavaScript" href="./assets/js/script.js"/>
+    <script src= "./assets/js/script.js"></script>
 </body>
 </html>

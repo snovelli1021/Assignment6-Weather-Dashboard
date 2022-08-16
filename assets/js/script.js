@@ -1,22 +1,5 @@
-var searchBtn = document.querySelector(".searchBtn");
+var searchBtn = document.getElementById("searchBtn");
 var cityList = document.querySelector('ul');
-var city = document.querySelector("inputCity");
-
-
-//Setting up API call
-function getAPI() {
-    var getURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=39ef46502d75ea57b3d7957787e6e636";
-    fetch(getURL)
-        .then(function (response) {
-            return response.json();
-        }) 
-}
-
-searchBtn.addEventListener('click');
-getAPI();
-
-
-
 
 //Setting up Local Storage
 function displayCity() {
@@ -26,12 +9,42 @@ function displayCity() {
 }
 
 searchBtn.addEventListener("click", function(event) {
-    event.preventDefault();
-    console.log("hi");
-    var inputCity = document.querySelector("#city").value;
-    localStorage.setItem("li", inputCity);
-    //localStorage.setItem("city" , inputCity);
-    console.log(inputCity);
-    displayCity();
- });
+    searchAPI();
+   
+});
 
+const searchAPI = function() {
+    var city = document.querySelector("#inputCity").value;
+    var getURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=39ef46502d75ea57b3d7957787e6e636`;
+    fetch(getURL)
+        .then(function (response) {
+            return response.json();
+        }).then(function(responseObj){
+            console.log(responseObj)
+            saveCity();
+        })     
+}
+
+
+const saveCity = function(){
+    var cityInput = document.getElementById("inputCity").value;
+    console.log(document.querySelector("inputCity"))
+    var cityList = JSON.parse (localStorage.getItem("cityHistory"))
+    if (cityList === null) {
+        cityList = []
+    }
+    cityList.push (cityInput)
+    localStorage.setItem ("cityHistory" , JSON.stringify(cityList))
+    renderCityList(cityList);
+    //print a button for each item in array
+};
+
+
+const renderCityList = function(cityList){
+    for (let i = 0; i < cityList.length; i++) {
+        const element = array[index];
+        
+    }
+
+
+};

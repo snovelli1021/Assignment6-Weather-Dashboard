@@ -26,7 +26,7 @@ body{
 .container .searchBar{
     margin: 20px;
 }
-.searchBtn{
+#searchBtn{
     color: #fff;
     cursor: pointer;
     background: #055188;
