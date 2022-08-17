@@ -34,7 +34,6 @@ const searchAPI = function() {
                 document.querySelector(".wind_speed").innerText = weatherData.current.wind_speed
                 document.querySelector(".uvi").innerText = weatherData.current.uvi
                 displayUVI(weatherData.current.uvi);
-                    
             })
             saveCity();
         })     
